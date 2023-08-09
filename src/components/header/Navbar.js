@@ -10,33 +10,44 @@ export default function Navbar() {
   return (
     <div>
 
-      <header style={{height: "90px"}}>
+      <header>
         <nav>
           <div className="left">
             <div className='navlogo'>
-              <NavLink to="/"> <img src='./AsmiBoutique.png' alt="" /></NavLink>
+              { /* <NavLink to="/"><a><p className='header-logo'>Asmi <span className='header-text-white'>Studio</span></p></a></NavLink> */
+              <NavLink to="/"><a><img src='./asmistudio.svg' className='img-fluid' alt="" /></a></NavLink> }
 
             </div>
             <div className='nav_searchbaar'>
-              <input type="text" name="" id="" />
-              <div className="search_icon">
+            <div className="search_icon">
                 {/* <i className="fas fa-search" id="search"></i> */}
                 <SearchIcon id="search" />
               </div>
+              <input type="text" name="" id="" placeholder='Search For Products, Brands and More'/>
             </div>
           </div>
           <div className="right">
             <div className="nav_btn">
-              <NavLink to="/login">Sign in</NavLink>
+             <NavLink to="/login">
+            <ul class="navbar-links">
+        <li class="navbar-dropdown">
+          <a href="#"><i className='bi bi-person'></i><span className='mobile-none'>Sign in</span> <i className='bi bi-chevron-down'></i></a>
+          <div class="dropdown">
+            <a href="#">My Account</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Logout</a>
+          </div>
+        </li>
+        </ul>
+            </NavLink>
             </div>
             <div className='cart_btn'>
-              <Badge badgeContent={4} color="primary">
-                <ShoppingCartIcon id="icon" />
-              </Badge>
-              <NavLink to="/getproductsone/:id">Cart</NavLink>
-
+              
+              <NavLink to="/getproductsone/:id"><i class="bi bi-cart2"></i><span className='mobile-none'>Cart</span></NavLink>
+              {/* <Badge badgeContent={4} color="primary">
+              </Badge> */}
             </div>
-            <Avatar className="avatar" />
+            {/* <Avatar className="avatar" /> */}
           </div>
         </nav>
       </header>
